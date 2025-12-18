@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian James Roldan - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== GENERAL STYLES ===== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a2e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* ===== PROFILE IMAGE + ORBIT ===== */
+.profile-container {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    margin: 40px auto;
+}
+
+.profile-pic {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    transform: translateY(10%);
+}
+
+.orbit-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+}
+
+.skill-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.icon-1 { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+.icon-2 { top: 50%; right: 0; transform: translateY(-50%); animation-delay: 0.5s; }
+.icon-3 { bottom: 20%; left: 10%; animation-delay: 1s; }
+.icon-4 { bottom: 50%; right: -10%; animation-delay: 1.5s; }
+
+/* ===== GRID STYLES ===== */
+.portfolio-grid, .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item, .blog-post {
+    background: #2a2a4e;
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover, .blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 968px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 30px;
+    }
+    .profile-container { width: 300px; height: 300px; }
+    .orbit-circle { width: 420px; height: 420px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+    <div class="logo"><span>C</span>hristian</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="logout-btn" class="cta-btn">Logout</button></li>
+    </ul>
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="tagline">Get To Know Me!</p>
+        <h1><span class="wave">👋</span> I'm CJ<br>Roldan</h1>
+        <p class="description">
+            In addition to all the branding and marketing features and benefits, my clients get to enjoy the advantages of a time-tested and refined workflow that is custom-tailored to each project!
+        </p>
+        <a href="#contact" class="cta-btn">Hire Me!</a>
+    </div>
+    <div class="hero-image">
+        <div class="profile-container">
+            <div class="profile-pic"><img src="Wetwew.jpg" alt="Profile Picture"></div>
+            <div class="orbit-circle">
+                <div class="skill-icon icon-1">🎨</div>
+                <div class="skill-icon icon-2">📱</div>
+                <div class="skill-icon icon-3">💎</div>
+                <div class="skill-icon icon-4">🌙</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p>
+        I'm Christian James Roldan, a passionate designer and developer focused on creating clean, modern, and user-friendly digital experiences. My workflow combines creativity with efficiency to deliver projects tailored to each client’s needs.
+    </p>
+    <div class="profile-container">
+        <div class="profile-pic"><img src="Wetwew.jpg" alt="Profile Picture"></div>
+        <div class="orbit-circle">
+            <div class="skill-icon icon-1">💻</div>
+            <div class="skill-icon icon-2">🎨</div>
+            <div class="skill-icon icon-3">⚡</div>
+            <div class="skill-icon icon-4">🌟</div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio-section">
+    <h2>Portfolio</h2>
+    <p>Here are some of my recent projects.</p>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="secret.png" alt="Project 1" class="portfolio-img">
+            <h3>Project Archi</h3>
+        </div>
+        <div class="portfolio-item">
+            <img src="savage.png" alt="Project 2" class="portfolio-img">
+            <h3>Project random</h3>
+        </div>
+        <div class="portfolio-item">
+            <img src="maniac.png" alt="Project 3" class="portfolio-img">
+            <h3>Project another portfolio</h3>
+        </div>
+        <div class="portfolio-item">
+            <img src="roldan2.png" alt="Project 4" class="portfolio-img">
+            <h3>Project pages</h3>
+        </div>
+    </div>
+</section>
+
+
+<section id="blog" class="blog-section">
+    <h2>Blog</h2>
+    <p>Check out my latest articles and insights.</p>
+    <div class="blog-grid">
+        <div class="blog-post">
+            <img src="halo.png" alt="Blog Post 1" class="blog-img">
+            <h3>Blog Title 1</h3>
+            <p>Short description or excerpt of your blog post goes here.</p>
+        </div>
+        <div class="blog-post">
+            <img src="hallo.png" alt="Blog Post 2" class="blog-img">
+            <h3>Blog Title 2</h3>
+            <p>Short description or excerpt of your blog post goes here.</p>
+        </div>
+        <div class="blog-post">
+            <img src="haa.png" alt="Blog Post 3" class="blog-img">
+            <h3>Blog Title 3</h3>
+            <p>Short description or excerpt of your blog post goes here.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>I'd love to hear from you! Fill out the form below or reach out directly.</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="cta-btn">Send Message</button>
+    </form>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:your-email@example.com">chrisitanjamesroldan@gmail.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">+63 9484 0971</a></p>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
