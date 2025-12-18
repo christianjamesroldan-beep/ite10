@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJ Roldan | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <!-- Left Branding -->
+        <div class="auth-brand">
+            <h1>👋 Hi, I’m <span>CJ</span></h1>
+            <p>
+                Welcome back!  
+                Login or create an account to explore my portfolio,
+                projects, and blog.
+            </p>
+        </div>
+
+        <!-- Right Form -->
+        <div class="auth-form">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('login')">Login</button>
+                <button class="tab" onclick="switchTab('register')">Register</button>
+            </div>
+
+            <div class="form-container">
+
+                <!-- Login -->
+                <form class="form active" id="loginForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" placeholder="you@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+
+                    <button class="submit-btn">Login</button>
+                    <div class="message" id="loginMessage"></div>
+                </form>
+
+                <!-- Register -->
+                <form class="form" id="registerForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="registerName" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="registerEmail" placeholder="you@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="registerPassword" placeholder="Min. 6 characters" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Repeat password" required>
+                    </div>
+
+                    <button class="submit-btn">Create Account</button>
+                    <div class="message" id="registerMessage"></div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
