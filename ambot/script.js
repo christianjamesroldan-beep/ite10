@@ -1,7 +1,7 @@
 // ================= PAGE PROTECTION =================
 document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("isLoggedIn") !== "true") {
-        // GitHub Pages repo path
+        // Redirect to login if not logged in
         window.location.href = "/ite10/akotosinatoy/index.html";
     }
 });
