@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     if (isLoggedIn) {
-        // Redirect only if already logged in
-        window.location.href = "/ite10/ambot/index.html"; // <- use repo-based path
+        // Redirect to portfolio if already logged in
+        window.location.href = "/ite10/ambot/index.html";
     }
 
     // Show login tab by default
@@ -44,7 +44,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
         localStorage.setItem("isLoggedIn", "true");
 
-        // Redirect to portfolio folder (GitHub Pages-safe path)
+        // Redirect to portfolio
         setTimeout(() => {
             window.location.href = "/ite10/ambot/index.html";
         }, 800);
@@ -69,7 +69,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         return;
     }
 
-    // Save user data to localStorage
+    // Save user data
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
