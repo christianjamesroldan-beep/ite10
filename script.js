@@ -1,8 +1,13 @@
 // ================= AUTO REDIRECT IF LOGGED IN =================
 document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("isLoggedIn") === "true") {
-        window.location.href = "../ambot/index.html"; // redirect to portfolio if logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (isLoggedIn) {
+        // Redirect only if already logged in
+        window.location.href = "../ambot/index.html";
     }
+
+    // Optional: show login tab by default
+    switchTab("login");
 });
 
 // ================= TAB SWITCH =================
@@ -64,6 +69,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         return;
     }
 
+    // Save user data to localStorage
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
@@ -71,12 +77,6 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
     registerMessage.textContent = "✅ Account created! Please login.";
     registerMessage.style.color = "#4ade80";
 
+    // Switch to login tab automatically
     switchTab("login");
 });
-
-    registerMessage.textContent = "✅ Account created! Please login.";
-    registerMessage.style.color = "#4ade80";
-
-    switchTab("login");
-});
-    
