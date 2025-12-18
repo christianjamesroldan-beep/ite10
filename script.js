@@ -1,3 +1,10 @@
+// ================= AUTO REDIRECT IF LOGGED IN =================
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        window.location.href = "../ambot/index.html"; // redirect to portfolio if logged in
+    }
+});
+
 // ================= TAB SWITCH =================
 function switchTab(tab) {
     document.querySelectorAll(".tab").forEach(btn =>
@@ -32,9 +39,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
         localStorage.setItem("isLoggedIn", "true");
 
-        // 🔗 CONNECT TO PORTFOLIO
+        // Redirect to portfolio folder
         setTimeout(() => {
-            window.location.href = "../ambot/portfolio.html";
+            window.location.href = "../ambot/index.html";
         }, 800);
     } else {
         loginMessage.textContent = "❌ Invalid email or password";
@@ -60,6 +67,12 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
+
+    registerMessage.textContent = "✅ Account created! Please login.";
+    registerMessage.style.color = "#4ade80";
+
+    switchTab("login");
+});
 
     registerMessage.textContent = "✅ Account created! Please login.";
     registerMessage.style.color = "#4ade80";
