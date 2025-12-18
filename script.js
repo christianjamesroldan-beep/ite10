@@ -54,6 +54,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     }
 });
 
+
 // ================= REGISTER =================
 document.getElementById("registerForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -63,67 +64,22 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
     const password = registerPassword.value;
     const confirm = confirmPassword.value;
 
+    // Password confirmation check
     if (password !== confirm) {
         registerMessage.textContent = "❌ Passwords do not match";
         registerMessage.style.color = "#f87171";
         return;
     }
 
-    // Save user data
+    // Save user info
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
 
+    // Success message
     registerMessage.textContent = "✅ Account created! Please login.";
     registerMessage.style.color = "#4ade80";
 
     // Switch to login tab automatically
     switchTab("login");
 });
-
-    const password = loginPassword.value;
-
-    const savedEmail = localStorage.getItem("userEmail");
-    const savedPassword = localStorage.getItem("userPassword");
-
-    if (email === savedEmail && password === savedPassword) {
-        loginMessage.textContent = "✅ Login successful!";
-        loginMessage.style.color = "#4ade80";
-
-        localStorage.setItem("isLoggedIn", "true");
-
-        // 🔗 CONNECT TO PORTFOLIO
-        setTimeout(() => {
-            window.location.href = "../ambot/portfolio.html";
-        }, 800);
-    } else {
-        loginMessage.textContent = "❌ Invalid email or password";
-        loginMessage.style.color = "#f87171";
-    }
-});
-
-// ================= REGISTER =================
-document.getElementById("registerForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = registerName.value;
-    const email = registerEmail.value;
-    const password = registerPassword.value;
-    const confirm = confirmPassword.value;
-
-    if (password !== confirm) {
-        registerMessage.textContent = "❌ Passwords do not match";
-        registerMessage.style.color = "#f87171";
-        return;
-    }
-
-    localStorage.setItem("userName", name);
-    localStorage.setItem("userEmail", email);
-    localStorage.setItem("userPassword", password);
-
-    registerMessage.textContent = "✅ Account created! Please login.";
-    registerMessage.style.color = "#4ade80";
-
-    switchTab("login");
-});
-    
