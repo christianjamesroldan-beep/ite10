@@ -1,8 +1,8 @@
 // ================= PAGE PROTECTION =================
 document.addEventListener("DOMContentLoaded", () => {
-    // Block direct access if not logged in
     if (localStorage.getItem("isLoggedIn") !== "true") {
-        window.location.href = "../akotosinatoy/index.html";
+        // GitHub Pages repo path
+        window.location.href = "/ite10/akotosinatoy/index.html";
     }
 });
 
@@ -11,6 +11,6 @@ const logoutBtn = document.getElementById("logout-btn");
 if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("isLoggedIn");
-        window.location.href = "../akotosinatoy/index.html";
+        window.location.href = "/ite10/akotosinatoy/index.html";
     });
 }
