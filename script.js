@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     if (isLoggedIn) {
         // Redirect only if already logged in
-        window.location.href = "../ambot/index.html";
+        window.location.href = "/ite10/ambot/index.html"; // <- use repo-based path
     }
 
-    // Optional: show login tab by default
+    // Show login tab by default
     switchTab("login");
 });
 
@@ -44,9 +44,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
         localStorage.setItem("isLoggedIn", "true");
 
-        // Redirect to portfolio folder
+        // Redirect to portfolio folder (GitHub Pages-safe path)
         setTimeout(() => {
-            window.location.href = "../ambot/index.html";
+            window.location.href = "/ite10/ambot/index.html";
         }, 800);
     } else {
         loginMessage.textContent = "❌ Invalid email or password";
