@@ -34,7 +34,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
         // 🔗 CONNECT TO PORTFOLIO
         setTimeout(() => {
-            window.location.href = "../ambot/portfolio.html";
+            window.location.href = "ambot/index.html";
         }, 800);
     } else {
         loginMessage.textContent = "❌ Invalid email or password";

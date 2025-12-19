@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // If NOT logged in → go to login/register page
     if (localStorage.getItem("isLoggedIn") !== "true") {
-        window.location.href = "../akotosinatoy/index.html";
+        window.location.href = "../index.html"; // fixed path
     }
 });
 
@@ -15,6 +15,6 @@ if (logoutBtn) {
         localStorage.removeItem("isLoggedIn");
 
         // Redirect to login/register page
-        window.location.href = "../akotosinatoy/index.html";
+        window.location.href = "../index.html"; // fixed path
     });
 }
